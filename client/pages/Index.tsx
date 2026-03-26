@@ -4,6 +4,7 @@ import VideoBackground from "@/components/VideoBackground";
 import VideoModal from "@/components/VideoModal";
 import SubscriptionModal from "@/components/SubscriptionModal";
 import PlanModal from "@/components/PlanModal";
+import AgeVerificationModal from "@/components/AgeVerificationModal";
 import Carousel from "@/components/Carousel";
 import { GraduationCap, Clock, Users, Star, ArrowRight, Leaf, Flame } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -14,6 +15,7 @@ export default function Index() {
   const [selectedVideo, setSelectedVideo] = useState<{ url: string; title: string } | null>(null);
   const [subscriptionModal, setSubscriptionModal] = useState({ isOpen: false, url: "", title: "" });
   const [planModal, setPlanModal] = useState({ isOpen: false, mobile: "" });
+  const [ageVerificationModal, setAgeVerificationModal] = useState({ isOpen: false, mobile: "" });
   const [pendingVideo, setPendingVideo] = useState<{ url: string; title: string } | null>(null);
   const [soloSlideIndex, setSoloSlideIndex] = useState(0);
 
@@ -31,6 +33,12 @@ export default function Index() {
   const handleSubscription = (mobile: string) => {
     console.log('Subscription submitted, pending video:', pendingVideo);
     setSubscriptionModal({ isOpen: false, url: "", title: "" });
+    setAgeVerificationModal({ isOpen: true, mobile });
+  };
+
+  const handleAgeVerificationConfirm = () => {
+    const mobile = ageVerificationModal.mobile;
+    setAgeVerificationModal({ isOpen: false, mobile: "" });
     setPlanModal({ isOpen: true, mobile });
   };
 
@@ -111,6 +119,11 @@ export default function Index() {
         isOpen={subscriptionModal.isOpen} 
         onClose={() => setSubscriptionModal({ isOpen: false, url: "", title: "" })} 
         onSubmit={handleSubscription} 
+      />
+      <AgeVerificationModal
+        isOpen={ageVerificationModal.isOpen}
+        onClose={() => setAgeVerificationModal({ isOpen: false, mobile: "" })}
+        onConfirm={handleAgeVerificationConfirm}
       />
       <PlanModal
         isOpen={planModal.isOpen}
