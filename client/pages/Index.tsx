@@ -845,12 +845,20 @@ export default function Index() {
               <p className="text-white/80 text-sm">Your gateway to desi entertainment</p>
               <div className="border-t border-white/20 pt-6 w-full">
                 <p className="text-white/80 text-sm mb-2">&copy; 2025, nServe Technology LLC All Rights Reserved</p>
-                <div className="flex gap-2 justify-center text-white/80 text-sm">
+                <div className="flex flex-wrap gap-2 justify-center text-white/80 text-sm">
                   <Link to="/terms" className="hover:text-white">Terms of Services</Link>
                   <span>|</span>
                   <Link to="/refund" className="hover:text-white">Refund Policy</Link>
                   <span>|</span>
                   <Link to="/privacy" className="hover:text-white">Privacy Policy</Link>
+                  <span>|</span>
+                  <Link to="/complaint-content-renewal-policy" className="hover:text-white">Complaint Content Renewal Policy</Link>
+                  <span>|</span>
+                  <Link to="/parental-controls" className="hover:text-white">Parental Controls</Link>
+                  <span>|</span>
+                  <Link to="/cookie-policy" className="hover:text-white">Cookie Policy</Link>
+                  <span>|</span>
+                  <Link to="/dmca-policy" className="hover:text-white">DMCA Policy</Link>
                 </div>
               </div>
             </div>

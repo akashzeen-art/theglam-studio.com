@@ -9,6 +9,10 @@ import Index from "./pages/Index";
 import Terms from "./pages/Terms";
 import Refund from "./pages/Refund";
 import Privacy from "./pages/Privacy";
+import ComplaintContentRenewalPolicy from "./pages/ComplaintContentRenewalPolicy";
+import ParentalControls from "./pages/ParentalControls";
+import CookiePolicy from "./pages/CookiePolicy";
+import DmcaPolicy from "./pages/DmcaPolicy";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
 import Account from "./pages/Account";
@@ -30,6 +34,10 @@ export default function App() {
             <Route path="/terms" element={<Terms />} />
             <Route path="/refund" element={<Refund />} />
             <Route path="/privacy" element={<Privacy />} />
+            <Route path="/complaint-content-renewal-policy" element={<ComplaintContentRenewalPolicy />} />
+            <Route path="/parental-controls" element={<ParentalControls />} />
+            <Route path="/cookie-policy" element={<CookiePolicy />} />
+            <Route path="/dmca-policy" element={<DmcaPolicy />} />
             <Route path="*" element={<Index />} />
           </Routes>
         </BrowserRouter>
